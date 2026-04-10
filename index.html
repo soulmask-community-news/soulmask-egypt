@@ -16,21 +16,23 @@
             --terracotta: #C65D3B;
             --obsidian: #1A1A1A;
             --papyrus: #F4E8D0;
+            --success-green: #2D8B57;
+            --success-dark: #1F5F3D;
         }
-
+ 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+ 
         body {
             font-family: 'Spectral', serif;
             background: linear-gradient(135deg, var(--obsidian) 0%, #2a2520 100%);
             color: var(--papyrus);
             overflow-x: hidden;
         }
-
+ 
         body::before {
             content: '';
             position: fixed;
@@ -45,12 +47,12 @@
             z-index: 0;
             pointer-events: none;
         }
-
+ 
         .container {
             position: relative;
             z-index: 1;
         }
-
+ 
         header {
             padding: 2rem 5%;
             display: flex;
@@ -64,7 +66,7 @@
             z-index: 100;
             animation: slideDown 0.8s ease-out;
         }
-
+ 
         @keyframes slideDown {
             from {
                 transform: translateY(-100%);
@@ -75,7 +77,7 @@
                 opacity: 1;
             }
         }
-
+ 
         .logo {
             font-family: 'Cinzel', serif;
             font-size: 2rem;
@@ -87,13 +89,13 @@
             letter-spacing: 3px;
             text-transform: uppercase;
         }
-
+ 
         nav ul {
             display: flex;
             gap: 2.5rem;
             list-style: none;
         }
-
+ 
         nav a {
             color: var(--papyrus);
             text-decoration: none;
@@ -103,7 +105,7 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
+ 
         nav a::after {
             content: '';
             position: absolute;
@@ -114,15 +116,15 @@
             background: var(--gold);
             transition: width 0.3s ease;
         }
-
+ 
         nav a:hover {
             color: var(--gold);
         }
-
+ 
         nav a:hover::after {
             width: 100%;
         }
-
+ 
         .hero {
             min-height: 90vh;
             display: flex;
@@ -135,7 +137,7 @@
                 linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)),
                 url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3966020/d266049fca8dca51b6b5f256c6ed4a93569c8946/ss_d266049fca8dca51b6b5f256c6ed4a93569c8946.1920x1080.jpg?t=1775548669') center/cover;
         }
-
+ 
         .hero-content {
             max-width: 1200px;
             text-align: center;
@@ -143,7 +145,7 @@
             z-index: 1;
             animation: fadeInUp 1s ease-out;
         }
-
+ 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -154,7 +156,7 @@
                 transform: translateY(0);
             }
         }
-
+ 
         .hero-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--egyptian-blue), var(--deep-gold));
@@ -170,7 +172,7 @@
             box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
             animation: pulse 2s infinite;
         }
-
+ 
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -179,7 +181,7 @@
                 transform: scale(1.05);
             }
         }
-
+ 
         .hero h1 {
             font-family: 'Cinzel', serif;
             font-size: 5.5rem;
@@ -195,7 +197,7 @@
             text-shadow: 0 0 40px rgba(201, 162, 39, 0.5);
             animation: fadeInUp 1.2s ease-out 0.2s both;
         }
-
+ 
         .hero-subtitle {
             font-size: 1.8rem;
             color: var(--sand);
@@ -204,7 +206,7 @@
             letter-spacing: 2px;
             animation: fadeInUp 1.4s ease-out 0.4s both;
         }
-
+ 
         .hero-description {
             font-size: 1.2rem;
             line-height: 1.8;
@@ -214,7 +216,7 @@
             animation: fadeInUp 1.6s ease-out 0.6s both;
             text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
-
+ 
         .hero-image {
             max-width: 100%;
             margin: 2rem auto;
@@ -222,7 +224,7 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             animation: fadeInUp 1.8s ease-out 0.8s both;
         }
-
+ 
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--gold), var(--deep-gold));
@@ -241,7 +243,7 @@
             position: relative;
             overflow: hidden;
         }
-
+ 
         .cta-button::before {
             content: '';
             position: absolute;
@@ -252,27 +254,28 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transition: left 0.5s ease;
         }
-
+ 
         .cta-button:hover::before {
             left: 100%;
         }
-
+ 
         .cta-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 50px rgba(201, 162, 39, 0.6);
         }
-
+ 
+        /* News Alert - Delay Announcement */
         .news-alert {
             background: linear-gradient(135deg, var(--terracotta) 0%, #a34825 100%);
             padding: 3rem 5%;
             border-top: 3px solid var(--gold);
             border-bottom: 3px solid var(--gold);
-            margin: 4rem 0;
+            margin: 4rem 0 0 0;
             position: relative;
             overflow: hidden;
             animation: slideInLeft 1s ease-out;
         }
-
+ 
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -283,7 +286,7 @@
                 transform: translateX(0);
             }
         }
-
+ 
         .news-alert::before {
             content: '⚠';
             position: absolute;
@@ -294,14 +297,47 @@
             opacity: 0.1;
             color: var(--obsidian);
         }
-
+ 
+        /* News Update - Cancellation Announcement */
+        .news-update {
+            background: linear-gradient(135deg, var(--success-green) 0%, var(--success-dark) 100%);
+            padding: 3rem 5%;
+            border-bottom: 3px solid var(--gold);
+            margin: 0 0 4rem 0;
+            position: relative;
+            overflow: hidden;
+            animation: slideInRight 1s ease-out 0.3s both;
+        }
+ 
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+ 
+        .news-update::before {
+            content: '✓';
+            position: absolute;
+            font-size: 15rem;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            color: var(--obsidian);
+        }
+ 
         .news-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-
+ 
         .news-label {
             display: inline-block;
             background: var(--obsidian);
@@ -315,8 +351,13 @@
             margin-bottom: 1.5rem;
             border-radius: 5px;
         }
-
-        .news-alert h2 {
+ 
+        .news-update .news-label {
+            background: var(--papyrus);
+            color: var(--success-dark);
+        }
+ 
+        .news-alert h2, .news-update h2 {
             font-family: 'Cinzel', serif;
             font-size: 2.5rem;
             font-weight: 900;
@@ -324,14 +365,14 @@
             margin-bottom: 1.5rem;
             letter-spacing: 2px;
         }
-
-        .news-alert p {
+ 
+        .news-alert p, .news-update p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: rgba(244, 232, 208, 0.95);
             margin-bottom: 1rem;
         }
-
+ 
         .news-date {
             font-family: 'Cinzel', serif;
             font-weight: 600;
@@ -339,43 +380,55 @@
             font-size: 1.1rem;
             margin-top: 1.5rem;
         }
-
+ 
+        .news-update .news-date {
+            color: var(--papyrus);
+        }
+ 
+        .warning-text {
+            background: rgba(0,0,0,0.3);
+            padding: 1.5rem;
+            border-left: 4px solid var(--gold);
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+ 
         .gallery {
             padding: 4rem 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
-
+ 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-
+ 
         .gallery-item {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transition: transform 0.3s ease;
         }
-
+ 
         .gallery-item:hover {
             transform: scale(1.05);
         }
-
+ 
         .gallery-item img {
             width: 100%;
             height: auto;
             display: block;
         }
-
+ 
         .features {
             padding: 6rem 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
-
+ 
         .section-title {
             font-family: 'Cinzel', serif;
             font-size: 3.5rem;
@@ -389,14 +442,14 @@
             letter-spacing: 3px;
             text-transform: uppercase;
         }
-
+ 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
-
+ 
         .feature-card {
             background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 37, 32, 0.8) 100%);
             padding: 3rem;
@@ -407,7 +460,7 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
         }
-
+ 
         .feature-card::before {
             content: '';
             position: absolute;
@@ -419,24 +472,24 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-
+ 
         .feature-card:hover::before {
             opacity: 1;
         }
-
+ 
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 60px rgba(201, 162, 39, 0.3);
             border-color: var(--sand);
         }
-
+ 
         .feature-icon {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             display: inline-block;
             filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.5));
         }
-
+ 
         .feature-card h3 {
             font-family: 'Cinzel', serif;
             font-size: 1.8rem;
@@ -445,25 +498,25 @@
             margin-bottom: 1rem;
             letter-spacing: 1px;
         }
-
+ 
         .feature-card p {
             font-size: 1.1rem;
             line-height: 1.7;
             color: rgba(244, 232, 208, 0.85);
         }
-
+ 
         footer {
             background: var(--obsidian);
             padding: 3rem 5%;
             border-top: 3px solid var(--gold);
             text-align: center;
         }
-
+ 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
         }
-
+ 
         .footer-logo {
             font-family: 'Cinzel', serif;
             font-size: 2rem;
@@ -475,55 +528,55 @@
             margin-bottom: 1rem;
             letter-spacing: 3px;
         }
-
+ 
         .footer-text {
             color: rgba(244, 232, 208, 0.7);
             font-size: 0.95rem;
             margin-top: 1rem;
         }
-
+ 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
             margin: 2rem 0;
         }
-
+ 
         .social-links a {
             color: var(--sand);
             font-size: 1.8rem;
             transition: all 0.3s ease;
             text-decoration: none;
         }
-
+ 
         .social-links a:hover {
             color: var(--gold);
             transform: translateY(-5px);
         }
-
+ 
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
             }
-
+ 
             .hero-subtitle {
                 font-size: 1.3rem;
             }
-
+ 
             nav ul {
                 flex-direction: column;
                 gap: 1rem;
             }
-
+ 
             .features-grid {
                 grid-template-columns: 1fr;
             }
-
+ 
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-
-            .news-alert h2 {
+ 
+            .news-alert h2, .news-update h2 {
                 font-size: 1.8rem;
             }
         }
@@ -542,7 +595,7 @@
                 </ul>
             </nav>
         </header>
-
+ 
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <span class="hero-badge">DLC Oficial - Gratis el Primer Mes</span>
@@ -556,10 +609,10 @@
                 <a href="#noticias" class="cta-button">Últimas Noticias</a>
             </div>
         </section>
-
+ 
         <section class="news-alert" id="noticias">
             <div class="news-content">
-                <span class="news-label">🔔 Anuncio Importante</span>
+                <span class="news-label">⚠ Anuncio Importante</span>
                 <h2>Actualización de Fecha de Lanzamiento</h2>
                 <p>
                     Estimada comunidad de Soulmask, queremos informaros de un cambio en nuestro calendario de desarrollo. 
@@ -572,15 +625,52 @@
                 </p>
                 <p>
                     Además, estamos trabajando en un <strong>Pack de Temas de Tribu en Modo Desarrollador</strong> que se lanzará junto al DLC, 
-                    permitiendo a los creadores de contenido personalizar sus experiencias con herramientas avanzadas de modding y crear sus propias civilizaciones.
-                </p>
-                <p>
-                    Agradecemos vuestra paciencia y comprensión. Los faraones esperaron milenios... nosotros esperaremos unos meses más para hacer esto bien.
+                    permitiendo a los creadores de contenido personalizar sus experiencias con herramientas avanzadas de modding.
                 </p>
                 <p class="news-date">📅 Nueva fecha: 28 de Noviembre de 2026</p>
             </div>
         </section>
-
+ 
+        <section class="news-update">
+            <div class="news-content">
+                <span class="news-label">✓ Actualización Urgente</span>
+                <h2>¡Escuchamos a la Comunidad! - Lanzamiento Confirmado para el 10 de Abril</h2>
+                <p>
+                    <strong>¡Chieftains!</strong> Después de leer vuestros comentarios y mensajes apasionados durante las últimas horas, 
+                    hemos tomado una decisión importante: <strong>Shifting Sands SE LANZARÁ el 10 de abril de 2026 como estaba planeado originalmente</strong>.
+                </p>
+                <p>
+                    Vuestra emoción y entusiasmo nos han demostrado que la comunidad está lista para explorar las Arenas Cambiantes, 
+                    y no queremos haceros esperar hasta noviembre. ¡Los faraones no esperan! 🏺
+                </p>
+                
+                <div class="warning-text">
+                    <p style="margin-bottom: 0.5rem;"><strong>⚠️ Sin embargo, debemos ser completamente transparentes:</strong></p>
+                    <p style="margin-bottom: 0.5rem;">
+                        • <strong>Sin música original</strong> - La banda sonora egipcia no estará lista. El DLC se lanzará con música placeholder del juego base.
+                    </p>
+                    <p style="margin-bottom: 0.5rem;">
+                        • <strong>Bugs menores conocidos</strong> - Hay algunos fallos cosméticos que no afectan la jugabilidad core (texturas, pequeños glitches visuales).
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        • <strong>Menús en chino</strong> - Algunos menús del modo desarrollador estarán parcialmente en chino. Los traduciremos en el próximo update.
+                    </p>
+                </div>
+ 
+                <p>
+                    Para los más ávidos de experimentar el mundo egipcio, las aeronaves voladoras y las máscaras divinas, 
+                    <strong>estos pequeños inconvenientes no deberían ser un problema</strong>. El contenido principal está completo y funcional.
+                </p>
+ 
+                <p>
+                    <strong>Próximos pasos:</strong> Lanzaremos un parche mayor en mayo con la música original, correcciones de bugs y 
+                    traducción completa de todos los menús al español, inglés y otros idiomas soportados.
+                </p>
+ 
+                <p class="news-date">🎮 Nos vemos en el Egipto antiguo el 10 de abril, Chieftains!</p>
+            </div>
+        </section>
+ 
         <section class="gallery" id="galeria">
             <h2 class="section-title">Galería de Imágenes</h2>
             <div class="gallery-grid">
@@ -604,7 +694,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <section class="features" id="caracteristicas">
             <h2 class="section-title">Características del DLC</h2>
             <div class="features-grid">
@@ -616,7 +706,7 @@
                         hasta islas flotantes, templos invertidos y laberintos subterráneos.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">✈️</div>
                     <h3>Construye tu Ciudad Aérea</h3>
@@ -625,7 +715,7 @@
                         Desde pequeños barcos de madera hasta enormes acorazados clase Ray.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">👑</div>
                     <h3>Máscaras de Dioses</h3>
@@ -634,7 +724,7 @@
                         Sobek (control de agua) y Amun-Ra (rayos solares).
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">⚔️</div>
                     <h3>Jefes Legendarios</h3>
@@ -643,7 +733,7 @@
                         y mazmorras. Incluye el épico Death Sandstorm.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
                     <h3>325 Nuevos Talentos</h3>
@@ -652,7 +742,7 @@
                         específico para el mundo egipcio.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">⚙️</div>
                     <h3>Modo Desarrollador</h3>
@@ -661,7 +751,7 @@
                         Crea civilizaciones personalizadas mediante Blueprints y Workshop.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Combate Aéreo</h3>
@@ -670,7 +760,7 @@
                         de acorazado.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">🏗️</div>
                     <h3>Sistema de Blueprints</h3>
@@ -679,7 +769,7 @@
                         Construye ciudades voladoras con un clic.
                     </p>
                 </div>
-
+ 
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>Anti-Gravedad</h3>
@@ -690,7 +780,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <footer>
             <div class="footer-content">
                 <div class="footer-logo">SOULMASK</div>
